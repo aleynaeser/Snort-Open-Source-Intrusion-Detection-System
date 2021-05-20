@@ -13,14 +13,6 @@
 *  _Snort_
 
 
-
-## _Project Activities_
-
-*
-*
-*
-
-
 ## _What is Snort?_
 
 #### Snort is a network intrusion detection / prevention system developed in 1998 by Martin Roesch. Snort, an open source and free software distributed under GNU license, is currently developed by Sourcefire, a company founded by Martin Roesch. 
