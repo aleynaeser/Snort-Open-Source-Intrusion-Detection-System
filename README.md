@@ -1,4 +1,4 @@
-# Snort-Open-Source-Intrusion-Detecti-n-System
+# Snort-Open-Source-Intrusion-Detection-System
 
 
  ## _Project Name_
