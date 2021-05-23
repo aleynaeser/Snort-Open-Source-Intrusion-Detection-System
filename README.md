@@ -68,7 +68,7 @@
 
 ## _Snort Rules Structure_
 
-The SNORT rule language determines which network traffic should be collected and what should happen when it detects malicious packets. Snort rules are divided into two logical sections, the rule header and the rule options.  The rule header contains the rule's action, protocol, source and destination IP addresses and netmasks, and the source and destination ports information. The rule option section contains alert messages and information on which parts of the packet should be inspected to determine if the rule action should be taken.
+The SNORT rule language determines which network traffic should be collected and what should happen when it detects malicious packets. Snort rules are divided into two logical sections, the rule header and the rule options.  The rule header contains the rule's action, protocol, source, destination IP addresses, netmasks,  the source and destination ports information. The rule option section contains alert messages and information on which parts of the packet should be inspected to determine if the rule action should be taken.
 
 ```
 <Rule Actions> <Protocol> <Source IP Address> <Source Port> <Direction Operator> <Destination IP Address> <Destination port > (rule options)
