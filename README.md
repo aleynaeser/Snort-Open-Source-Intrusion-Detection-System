@@ -15,9 +15,9 @@
 
 ## _What is Snort?_
 
-#### Snort is a network intrusion detection / prevention system developed in 1998 by Martin Roesch. Snort, an open source and free software distributed under GNU license, is currently developed by Sourcefire, a company founded by Martin Roesch. 
+#### Snort is a network intrusion detection system developed in 1998 by Martin Roesch. Snort, an open source and free software distributed under GNU license, is currently developed by Sourcefire, a company founded by Martin Roesch. 
 
-## _Features of Snort?_
+## _Features of Snort_
 
 *	Real-time traffic monitor
 *	Packet logging
@@ -29,7 +29,7 @@
 *	Open Sourse
 *	Rules are easy to implement
 
-## _Purpose of Snort?_
+## _Purpose of Snort_
 
 #### The main purpose of Snort is to perform packet logging and traffic analysis on the network. In this case, Snort has three primary uses: As a packet sniffer, as a packet logger — which is useful for network traffic debugging, or it can be used as a full-blown network intrusion prevention system. 
 
@@ -88,7 +88,7 @@ The SNORT rule language determines which network traffic should be collected and
 
 ## _Snort Setup_
 
-#### In the installation to be done on the Ubuntu 16.04 desktop version, we first made machine updates and then went to the installation phase. 
+#### In the installation to be done on the Ubuntu 17.04 in the virtual machine, we first made machine updates and then went to the installation phase. 
 
 ## Install Steps
 
@@ -148,7 +148,7 @@ Snort Console MODE
 Creating Rule for Ping Attacks
 
 - sudo gedit /etc/snort/rules/local.rules
-- alert
+- alert  icmp 192.168.x.x any -> $HOME_NET any (msg:”Warning Ping Detected”; sid:1000002; rev:1; classtype:icmp-event;)
 - sudo snort -A console -q -c /etc/snort/snort.conf -i enp0s3
 - ping 192.168.x.x
 
@@ -162,7 +162,7 @@ Creating Rule for Ping Attacks
 Creating Rule for FTP
 
 - sudo gedit /etc/snort/rules/local.rules
-- alert
+- alert tcp 192.168.x.x any -> $HOME_NET 21 (msg:”FTP connection attempt”; sid:1000002; rev:1;)
 - snort -c /etc/snort/snort.conf -q -A console
 - ftp 192.168.x.x
 
@@ -175,7 +175,7 @@ Creating Rule for FTP
 Nmap Scan Detect Without Rule
 
 - snort -c /etc/snort/snort.conf -q -A console
-- nmap 
+- nmap -sP 192.168.x.x --disable-arp-ping
 
 ```
 
@@ -184,9 +184,9 @@ Nmap Scan Detect Without Rule
 Nmap Scan Detect With Rule
 
 - sudo gedit /etc/snort/rules/local.rules
-- alert
+- alert  icmp 192.168.x.x any -> $HOME_NET any (msg:”Nmap Scan Detected”; sid:1000001; rev:1; classtype:tcp-event;)
 - snort -c /etc/snort/snort.conf -q -A cmg
-- nmap 
+- nmap -sP 192.168.x.x --disable-arp-ping
 
 ```
 
@@ -194,9 +194,9 @@ Nmap Scan Detect With Rule
 Nmap TCP Scan Detect With Rule
 
 - sudo gedit /etc/snort/rules/local.rules
-- alert
+- alert  icmp 192.168.x.x any -> $HOME_NET 22 (msg:”Nmap TCP Scan Detected”; sid:1000001; rev:1; classtype:icmp-event;)
 - snort -c /etc/snort/snort.conf -q -A console
-- nmap 
+- nmap -sT -p22 192.168.x.x
 
 ```
 
@@ -204,7 +204,8 @@ Nmap TCP Scan Detect With Rule
 ## _Team Members_
 
 
-* _Aleyna Eser - 17030411052_     _Rumeysa Özer - 17030411005_
+* _Aleyna Eser - 17030411052_  
+* _Rumeysa Özer - 17030411005_
 
 
 ## _References_
@@ -216,5 +217,3 @@ Nmap TCP Scan Detect With Rule
 * Hüsnü İŞLEYEN, 8 Sep 2014, https://github.com/slyn/Snort/blob/master/Snort%20ve%20Eklentileri.md
 * Prısma, https://www.prismacsi.com/snort-kullanimi/#:~:text=Snort%20esnek%20mimarisi%20sayesinde%20bir,esnek%20kurallar%20yazabilme%20imkan%C4%B1%20vermesidir.
 * P. Israelsson, J.Karlsson and G. Giamarchi, October 17, 2005, https://www.it.uu.se/edu/course/homepage/sakdat/ht05/assignments/pm/programme/Introduction_to_snort.pdf
-
-
