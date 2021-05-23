@@ -66,6 +66,13 @@
 #### Alerts are placed in the Alert file in the logging directory. Snort has 6 alert modes. These are fast, full, console, cmg, unsock and none. We applied cmg and console modes. Also, the mode Snort is run in depends on which flags are used with the Snort command.
 
 
+#### Each alert carry the following information:
+
+*	IP  address of the source
+*	IP address of the destination
+*	Packet type and useful header information
+
+
 ## _Snort Rules Structure_
 
 The SNORT rule language determines which network traffic should be collected and what should happen when it detects malicious packets. Snort rules are divided into two logical sections, the rule header and the rule options.  The rule header contains the rule's action, protocol, source, destination IP addresses, netmasks,  the source and destination ports information. The rule option section contains alert messages and information on which parts of the packet should be inspected to determine if the rule action should be taken.
@@ -77,13 +84,6 @@ The SNORT rule language determines which network traffic should be collected and
 
 ![image](https://user-images.githubusercontent.com/45822686/118878921-c9161580-b8f8-11eb-8787-14ec99898dea.png)
 
-
-
-#### Each alert carry the following information:
-
-*	IP  address of the source
-*	IP address of the destination
-*	Packet type and useful header information
 
 
 ## _Snort Setup_
