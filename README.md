@@ -115,7 +115,7 @@ cd snort-2.9.17.1
  
 - snort -V
 - ifconfig
-- sudo snort -T -i eth0 -c /etc/cnort/cnort.conf
+- sudo snort -T -i eth0 -c /etc/cnort/snort.conf
 - snort -r
 - apt-get update
 - apt-get install nmap
