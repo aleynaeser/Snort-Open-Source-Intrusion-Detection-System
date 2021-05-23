@@ -184,7 +184,7 @@ Nmap Scan Detect Without Rule
 Nmap Scan Detect With Rule
 
 - sudo gedit /etc/snort/rules/local.rules
-- alert  icmp 192.168.x.x any -> $HOME_NET any (msg:”Nmap Scan Detected”; sid:1000001; rev:1; classtype:tcp-event;)
+- alert  icmp 192.168.x.x any -> $HOME_NET any (msg:”Nmap Scan Detected”; sid:1000001; rev:1; classtype:icmp-event;)
 - snort -c /etc/snort/snort.conf -q -A cmg
 - nmap -sP 192.168.x.x --disable-arp-ping
 
@@ -194,7 +194,7 @@ Nmap Scan Detect With Rule
 Nmap TCP Scan Detect With Rule
 
 - sudo gedit /etc/snort/rules/local.rules
-- alert  icmp 192.168.x.x any -> $HOME_NET 22 (msg:”Nmap TCP Scan Detected”; sid:1000001; rev:1; classtype:icmp-event;)
+- alert  icmp 192.168.x.x any -> $HOME_NET 22 (msg:”Nmap TCP Scan Detected”; sid:10000005; rev:2; classtype:tcp-event;)
 - snort -c /etc/snort/snort.conf -q -A console
 - nmap -sT -p22 192.168.x.x
 
