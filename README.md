@@ -122,7 +122,7 @@ cd snort-2.9.17.1
 
 ## _Implementing Snort_
 
-Video -----> https://drive.google.com/file/d/1QJs4uJIRAxkEhf1ORO2tRO5B-qPyQivx/view?usp=sharing
+Video ----->   https://drive.google.com/file/d/1QJs4uJIRAxkEhf1ORO2tRO5B-qPyQivx/view?usp=sharing
 
 ## _Detecting Ping in Snort With Various Snort Alerts Modes_
 
